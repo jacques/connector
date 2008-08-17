@@ -1,0 +1,46 @@
+<div style="position: relative;" class="report">
+	<%= render_list_header(@group_name, @paginator, 'notes') %>
+	<table id="tableList" class="tableList">
+		<colgroup>
+			<col style="width:6%;" />
+			<col style="width:49%;" />
+			<col style="width:29%;" />
+			<col style="width:10%">
+			<col style="width:6%;" />
+		</colgroup>
+		
+		<thead>
+			<tr>
+				<th class="checkBox"><%= list_selection_tool %></th>
+				<%= toggle_sort_th(_('Name'), 'name') %>
+				<%= toggle_sort_th(_('Date Modified'), 'updated_at') %>
+				<%= toggle_sort_th(_('Version'), 'version') %>
+				<th class="detailView"><span>Peek</span></th>
+		</thead>
+		<tbody>
+			<% @notes.each_with_index do |note, index| -%>
+				<tr id="<%= note.dom_id %>_tr" itemDomId="<%= note.dom_id %>" class="itemRow <% index.odd? ? 'oddRow' : 'evenRow' %>">
+					<td class="checkbox">
+						<input class="listCheckbox", id="<%= note.dom_id %>_list_checkbox" onclick="JoyentPage.toggleItemCheckbox(this);" itemDomId="<%= note.dom_id %>" type="checkbox" />
+					</td>
+					<td>
+						<%= link_to h(note.name), note_url(note) %>
+					</td>
+					<td>
+						<%= link_to format_local_words_or_date(note.updated_at), note_url(note) %>
+					</td>
+					<td>
+					    <%= link_to h(note.version), note_url(note)%>
+					</td>
+					<td id="<%= note.dom_id %>_td_details_icon" class="details">
+						<%= link_to_function _('Details'), "PeekView.toggle('#{note.dom_id}', '#{peek_url(note, note.dom_id)}')" %>
+					</td>
+				</tr>
+				<tr id="<%= note.dom_id %>_tr_details" itemDomId="<%= note.dom_id %>" style="display: none;" class="<%= index.odd? ? 'oddRow' : 'evenRow' %>">	
+					<td id="<%= note.dom_id %>_td_details" colspan="5" class="Details"></td>
+				</tr>
+			<% end -%>
+		</tbody>
+	</table>
+		
+</div>

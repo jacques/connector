@@ -1,0 +1,19 @@
+<div class="infobox">
+    <table style="width:100%">
+        <tr>
+            <td style="text-align: left">
+                <h2 id="noteNameShowView"><%= @revision.name %></h2>
+                <h3 id="noteVersionShowView"><%= _('Revision') %> <%= @revision.version %> (<%= format_local_words_or_date(@revision.updated_at) %>)</h3>
+            </td>
+            <td style="text-align:right;">
+      				<%= link_to '<div class="buttonStandardLeft"><div class="buttonStandardRight"><div class="buttonStandardBG"><span style="">' + _('View plain text') + '</span></div></div></div>', formatted_note_url(@note, :txt), {:class => 'buttonStandard'} %>
+      			</td>
+        </tr>
+    </table>
+</div>
+
+<div id="noteContainer">
+    <%= render :partial => 'note' -%>
+</div>
+
+<%= render :partial => "comments/list", :locals => {:item => @note }%>

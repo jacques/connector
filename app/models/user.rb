@@ -57,6 +57,8 @@ class User < ActiveRecord::Base
   has_one    :bookmark_folder, :dependent => :destroy
   has_many   :list_folders,    :dependent => :destroy
   has_many   :person_groups,   :dependent => :destroy, :order => 'LOWER(person_groups.name)'
+  has_many   :note_folders,    :dependent => :destroy
+
 
   has_many   :messages,        :dependent => :destroy
   has_many   :events,          :dependent => :destroy
@@ -64,6 +66,7 @@ class User < ActiveRecord::Base
   has_many   :joyent_files,    :dependent => :destroy
   has_many   :bookmarks,       :dependent => :destroy
   has_many   :lists,           :dependent => :destroy
+  has_many   :notes,           :dependent => :destroy
 
   has_many   :invitations,     :dependent => :destroy
   has_many   :reports,         :dependent => :destroy, :order => 'position'
@@ -511,6 +514,11 @@ class User < ActiveRecord::Base
   def lists_root_folders
     root_groups = list_folders.select{|lf| lf.parent_id == self.lists_list_folder.id}
     root_groups.select{|lf| User.current.can_view?(lf)}
+  end
+
+  def notes_note_folder
+    note_folder = note_folders.find(:first, :conditions => ["note_folders.name = 'Notes' AND note_folders.parent_id IS NULL"])
+    User.current.can_view?(note_folder) ? note_folder : nil
   end
 
   def browser_root_groups_for(application_name, context = nil)

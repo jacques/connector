@@ -1,0 +1,57 @@
+<h3><%= _('Markdown syntax') %></h3>
+
+<table border="0" width="100%">
+	<tr>
+		<td width="50%" style="text-align: left;">
+			<h5><%= _('Block Level Elements') %></h5>
+		</td>
+		<td width="50%" style="text-align: left;">
+			<h5><%= _('Span Elements') %></h5>			
+		</td>
+	</tr>
+</table>
+
+<table border="0" width="100%">
+	<tr>
+		<td style="padding: 0 1em 0 0; border-right: 1px solid #B1B1B1; vertical-align: top; width: 50%;">
+<pre>
+  Header Level 1
+  ==============
+  
+  Header Level 2
+  ==============
+  
+  # Header 1
+  ## Header 2
+  ###### Header 6
+  
+  > Blockquote
+  > blockquote
+  
+  * Unordered list
+  * item 2
+  
+  1. Ordered list
+  2. Item 2
+  3. Item 3
+</pre>
+
+	</td>
+	<td style="padding: 0 0 0 1em; vertical-align: top; width: 50%;">
+
+<pre>
+  [Link text][ref]
+  
+  [ref]: http://url.tld "Optional title text"
+  
+  <em>_emaphasis_</em>  
+  <strong>**strong**</strong>  
+  ![Alt text](/url/to/img.png "Optional title")
+</pre>
+
+</td>
+</table>
+
+<div class="drawerButtons">
+	<input type="button" value="<%= _('Done') %>" onclick="Drawers.hide('Syntax');" />
+</div>

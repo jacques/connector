@@ -82,6 +82,7 @@ class AuthenticatedController < ApplicationController
     when 'files'     then files_list_route_url(:folder_id => current_user.documents_folder.id)
     when 'bookmarks' then bookmarks_list_route_url(:bookmark_folder_id => current_user.bookmark_folder.id)
     when 'lists'     then lists_url(:group => current_user.lists_list_folder.id)
+    when 'notes'     then notes_url(:group => User.current.notes_note_folder.id)
     when 'fileswpl'  then files_service_url(:service_name => 'lightning', :group_id => nil)
     when 'wpl'       then files_service_url(:service_name => 'lightning', :group_id => nil)
     else 
@@ -171,7 +172,7 @@ class AuthenticatedController < ApplicationController
     end
 
     def item_type(type_name)
-      valid_types = ['Message', 'Event', 'Person', 'JoyentFile', 'Bookmark', 'List', 'User']
+      valid_types = ['Message', 'Event', 'Person', 'JoyentFile', 'Bookmark', 'List', 'Note', 'User']
       raise 'Unknown Item Type' unless valid_types.include?(type_name)
 
       Object.const_get(type_name)
@@ -195,7 +196,7 @@ class AuthenticatedController < ApplicationController
     end
 
     def group_type(type_name)
-      valid_types = ['Mailbox', 'Calendar', 'ContactList', 'Folder', 'BookmarkFolder', 'ListFolder', 'CalendarSubscription', 'PersonGroup']
+      valid_types = ['Mailbox', 'Calendar', 'ContactList', 'Folder', 'BookmarkFolder', 'ListFolder', 'CalendarSubscription', 'PersonGroup', 'NoteFolder']
       raise "Unknown Group Type '#{type_name}'" unless valid_types.include?(type_name)
 
       Object.const_get(type_name)

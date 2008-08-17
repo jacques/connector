@@ -1,0 +1,8 @@
+<div id="Drawers">
+	<% if @toolbar[:syntax] -%>
+    <div class="drawerContent" id="drawerSyntax" style="display: none;"><%= render :partial => 'syntax' -%></div>
+  <% end -%>
+  <% if @toolbar[:revisions] -%>
+    <div class="drawerContent" id="drawerRevisions", style="display:none;"><%= render :partial => 'revisions' -%></div>
+  <% end -%>
+</div>

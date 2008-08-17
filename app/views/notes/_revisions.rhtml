@@ -1,0 +1,27 @@
+<table>
+  <tr>
+    <th><%= _('Revision') %></th>
+    <th><%= _('Last modified') %></th>
+    <th>Difference</th>
+  </tr>
+  <% @note.versions.reverse.each do |version| -%>
+    <%- unless @revision.version == version.version %>
+      <tr>
+        <td><%= link_to version.version, note_url(:id => @note, :revision => version.version) %></td>
+        <td><%= link_to format_local_words_or_date(version.updated_at), note_url(:id => @note, :revision => version.version) %></td>
+        <%- changes = Note::diff(@revision, version)%>
+        <td><%= link_to "+#{changes[:insertions]}\%, -#{changes[:deletions]}\%", {:action => 'diff', :id => @note, :revision => @revision.version, :with => version.version} %></td>
+      </tr>
+     <%- else %>
+      <tr>
+        <td><%= version.version %></td>
+        <td><%= format_local_words_or_date(version.updated_at) %></td>
+        <td></td>
+      </tr>
+      <%- end %>
+  <% end -%>
+</table>
+
+<div class="drawerButtons">
+	<input type="button" value="<%= _('Done') %>" onclick="Drawers.hide('Revisions');" />
+</div>

@@ -32,6 +32,7 @@ ActionController::Routing::Routes.draw do |map|
     m.lists_home     'home/lists'
     m.lightning_home 'home/fileswpl'
     m.wpl_home       'home/wpl'
+    m.notes_home     'home/notes'
   end
   
   map.with_options :controller => 'admin' do |m|
@@ -160,6 +161,17 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :list_columns
   map.resources :list_cells
   map.resources :list_folders
+  
+  # Notes
+  map.with_options :controller => 'notes' do |m|
+    m.note_notifications  'notes/notifications',  :action => 'notifications'
+    m.note_import          'notes/import',         :action => 'import'
+    m.move_note            'note/move',           :action => 'move'
+    m.copy_note            'notes/copy',           :action => 'copy'
+    m.notes_set_sort_order 'notes/set_sort_order', :action => 'set_sort_order'
+  end
+  map.resources :notes
+  map.resources :notes_folders
   
   map.with_options :controller => 'mail_alias' do |m|
     m.mail_alias_index  'mail_alias',        :action => 'index'

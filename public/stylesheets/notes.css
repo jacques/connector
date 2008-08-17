@@ -1,0 +1,203 @@
+/* @override 
+	http://raysend.imanishi.local:3000/stylesheets/notes.css?1185965892
+	http://raysend.imanishi.local:3000/stylesheets/notes.css?1202491955
+	http://raysend.imanishi.local:3000/stylesheets/notes.css?1202498754
+	http://raysend.imanishi.local:3000/stylesheets/notes.css?1202498934
+	http://raysend.imanishi.local:3000/stylesheets/notes.css?1202570696
+	http://raysend.imanishi.local:3000/stylesheets/notes.css?1202593728
+	http://raysend.imanishi.local:3000/stylesheets/notes.css?1203623652
+*/
+
+.actionRevisions a.disabled, .actionRevisions a:hover.disabled {
+	background-position: -450px 0px;
+}
+.actionRevisions a {
+	background-position: -450px -30px;
+}
+.actionRevisions a:hover {
+	background-position: -450px -60px;
+}
+.actionRevisions a:active, .actionRevisions a.active {
+	background-position: -450px -90px;
+}
+
+.actionRevert a.disabled, .actionRevert a:hover.disabled {
+	background-position: -10px 0px;
+}
+.actionRevert a {
+	background-position: -10px -30px;
+}
+.actionRevert a:hover {
+	background-position: -10px -60px;
+}
+.actionRevert a:active, .actionRevert a.active {
+	background-position: -10px -90px;
+}
+
+.actionText a.disabled, .actionText a:hover.disabled {
+	background-position: -140px 0px;
+}
+.actionText a {
+	background-position: -140px -30px;
+}
+.actionText a:hover {
+	background-position: -140px -60px;
+}
+.actionText a:active, .actionText a.active {
+	background-position: -140px -90px;
+}
+
+.actionSyntax a.disabled, .actionSyntax a:hover.disabled {
+	background-position: -250px 0px;
+}
+.actionSyntax a {
+	background-position: -250px -30px;
+}
+.actionSyntax a:hover {
+	background-position: -250px -60px;
+}
+.actionSyntax a:active, .actionSyntax a.active {
+	background-position: -250px -90px;
+}
+
+.actionShowCurrent a.disabled, .actionShowCurrent a:hover.disabled {
+	background-position: -750px 0px;
+}
+.actionShowCurrent a {
+	background-position: -750px -30px;
+}
+.actionShowCurrent a:hover {
+	background-position: -750px -60px;
+}
+.actionShowCurrent a:active, .actionToday a.active {
+	background-position: -750px -90px;
+}
+
+.actionShow a.disabled, .actionShow a:hover.disabled {
+	background-position: -1500px 0px;
+}
+.actionShow a {
+	background-position: -1500px -30px;
+}
+.actionShow a:hover {
+	background-position: -1500px -60px;
+}
+.actionShow a:active, .actionShow a.active {
+	background-position: -1500px -90px;
+}
+
+
+#noteContainer{
+	margin-left: 3em;
+	margin-right: 3em;
+}
+
+#noteContainer * {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+#noteContainer p, 
+#noteContainer ol, 
+#noteContainer ul,
+#noteContainer pre {
+	margin-bottom: 18px;
+	width: 100%;
+}
+
+#noteContainer ul, #noteContainer ol {
+	list-style-position: outside;
+}
+
+#noteContainer strong {
+	font-weight: bold;
+}
+
+#noteContainer em {
+	font-style: italic;
+}
+
+#noteContainer code {
+	font:  0.9em Monoco, monospace;
+}
+
+#noteContainer blockquote {
+	margin-left: 2em;
+	margin-right: 4em;
+	padding-left: 1em;
+	border-left: thin solid #d5d5d5;
+}
+
+#noteContainer blockquote * {
+	font-size:  10px;
+}
+
+/* Headers */
+
+#noteContainer h1, 
+#noteContainer h2, 
+#noteContainer h3, 
+#noteContainer h4, 
+#noteContainer h5, 
+#noteContainer h6 {
+	font-weight: bold;
+}
+
+#noteContainer h1 { 
+	font-size: 36px; 
+	line-height: 36px; 
+	padding: 18px 0; 
+}
+
+#noteContainer h2 { 
+	font-size: 28px; 
+	line-height: 36px; 
+}
+
+#noteContainer h3 { 
+	font-size: 18px; 
+}
+
+#noteContainer h4 { 
+	font-size: 14px; 
+}
+
+#noteContainer h5 { 
+	font-size: 12px; 
+}
+
+#noteContainer h6 { 
+	font-size: 10px; 
+}
+
+.notePreview {
+	padding-left: 4em;
+	white-space: normal;
+}
+
+.notePreview p,
+.notePreview ol,
+.notePreview ul,
+.notePreview blockquote,
+.notePreview h1,
+.notePreview h2,
+.notePreview h3,
+.notePreview h4,
+.notePreview h5,
+.notePreview h6
+{
+	margin-bottom: 1.2em;
+	line-height: 1.6em;
+}
+
+#noteContainer del.diffmod {
+	background-color: #ffaaaa;
+}
+
+#noteContainer ins.diffmod {
+	background-color: #aaffaa;
+}
+
+#noteContainer ins {
+	background-color: #aaffaa;
+}

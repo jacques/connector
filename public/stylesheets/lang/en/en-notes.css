@@ -1,0 +1,35 @@
+/* @override http://raysend.imanishi.local:3000/stylesheets/lang/en/en-notes.css?1202593818 */
+
+/* Toolbar (actionsNotes) ------------------------------------------- */
+
+
+
+.actionRevisions a {	
+	width: 91px !important;
+	background-image: url(/images/lang/en/actionsNotes.png);
+	}
+	
+.actionRevert a {	
+	width: 80px !important;
+	background-image: url(/images/lang/en/actionsNotes.png);
+	}
+
+.actionText a {	
+	width: 70px !important;
+	background-image: url(/images/lang/en/actionsNotes.png);
+	}
+	
+.actionSyntax a {	
+	width: 80px !important;
+	background-image: url(/images/lang/en/actionsNotes.png);
+	}
+	
+.actionShowCurrent a {
+	width: 66px !important;
+	background-image: url(/images/lang/en/actionsCalendar.png);
+	}
+	
+.actionShow a {
+	width: 78px !important;
+	background-image: url(/images/lang/en/actions.png);
+	}

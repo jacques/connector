@@ -89,6 +89,7 @@ require 'drb'
 require 'ezcrypto'
 require 'joyent_exceptions'
 require 'mockfs'
+require 'maruku'
 
 ExceptionNotifier.exception_recipients = JoyentConfig.exception_recipients
 ExceptionNotifier.email_prefix         = JoyentConfig.exception_email_prefix

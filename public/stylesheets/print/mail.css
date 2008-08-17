@@ -1,0 +1,67 @@
+body {
+	background: white;
+	font-size: 12pt;
+	font-family: 'Lucida Grande', Helvetica, sans-serif;
+}
+
+#contentPane {
+	background: transparent;
+	color: black;
+}
+
+#Toolbar,
+#sidebars,
+#Dock,
+#plusMenuLink,
+.buttonPrevious,
+.buttonNext,
+#report_issue,
+div.infobox div,
+.CommentsCollapsed,
+a.go.toContacts,
+a.typeAddContactNoLabel {
+	display: none;
+}
+
+iframe {
+	margin-top: 18pt;
+	border: 0;
+}
+
+.message pre {
+	margin-left: 2em;
+}
+
+#itemView {
+	font-size: 10pt;
+}
+
+#itemView dl dd,
+#itemView .inlineList,
+#itemView .inlineList ul,
+#itemView .inlineList li {
+	display: inline;
+}
+
+#itemView dt {
+	clear: both;
+}
+
+#itemView dd {
+	float: left;
+}
+
+#itemView .inlineList ul,
+#itemView .inlineList li {
+	padding: 0;
+	margin: 0;
+}
+
+.inlineList a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.inlineList a span:after {
+	content: " " attr(title);
+}

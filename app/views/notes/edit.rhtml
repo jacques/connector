@@ -1,0 +1,31 @@
+<div class="dialog">
+    <h2><%= _('Edit Note') %></h2>
+    <% unless @revision.nil? -%>
+      <h3><%= _('Reverting from revision: ') %> <%= @revision.version %></h3>
+    <% end -%>
+    <% form_for :note, @note, :url => note_path(@note), :html => {:method => :put}, :onsubmit => 'return Note.validateSubmit(this);', :class => 'item_editor', :style => 'margin-bottom: 0;' do |f| -%>
+        <div class="infoGroup">
+            <table style="width: 100%;">
+                <tr>
+                    <td class="infoGroupLabel" valign="top" style="width: 65px;"><%= _('Name') %>:</td>
+                    <td style="padding-left: 5px; padding-bottom: 8px;">
+                        <%= f.text_field :name %>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <%= text_area "note", "body", :rows=>"24", :style => "width: 100%;" %>
+        <div class="infoGroup" style="text-align:center;">
+			<%= render :partial => 'partials/sidebar_buttons' %>
+		</div>
+        <div class="infoGroup">
+          <input id="new_item_tags" value="" type="hidden" name="new_item_tags" />
+    			<input id="new_item_permissions" value="" type="hidden" name="new_item_permissions" />
+    			<input id="new_item_notifications" value="" type="hidden" name="new_item_notifications" />
+
+          <%= submit_tag _('Save') %>
+      	  <%= button_to_function _('Discard changes'), "window.location = '#{note_url(@note)}'" %>
+        </div>
+    <% end -%>
+</div>

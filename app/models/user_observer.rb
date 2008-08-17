@@ -28,6 +28,7 @@ class UserObserver < ActiveRecord::Observer
       user.create_contact_list(:organization_id => user.organization_id)
       user.create_bookmark_folder(:organization_id => user.organization_id)
       user.list_folders.create(:name => 'Lists', :organization_id => user.organization_id)
+      user.note_folders.create(:name => 'Notes', :organization_id => user.organization_id)
       
       user.generate_domain_email_addresses
 

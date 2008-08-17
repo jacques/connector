@@ -389,6 +389,16 @@ class SyndicationController < ApplicationController
     render :action => 'lists_rss'
   end
   
+  # notes
+  def notes_standard_rss
+  end
+  
+  def notes_smart_rss
+  end
+  
+  def notes_notifications_rss
+  end
+  
   # reports
   
   def current_time_rss

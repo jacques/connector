@@ -1,0 +1,38 @@
+<ul id="Toolbar">
+	<% if @toolbar[:new] -%>
+		<li class="actionNew"><%= link_to _('New'), new_note_url %></li>
+	<% end -%>
+	<% if @toolbar[:edit] -%>
+	    <li class="actionEdit"><%= link_to _('Edit'), edit_note_url %></li>
+	<% end -%>
+	<% if @toolbar[:revert] -%>
+	    <li class="actionRevert"><%= link_to _('Revert'), edit_note_url(:id => @note, :revision => @revision.version) %></li>
+	<% end -%>
+	<% if @toolbar[:copy] -%>
+	    <li class="actionCopy"><%= link_to_function _('Copy'), "return Drawers.toggleBrowser('Copy);", {:id => 'actionCopyLink'} %></li>
+    <% end -%>
+    <% if @toolbar[:move] -%>
+        <li class="actionMove"><% link_to_function _('Move'), "return Drawers.toogleBrowser('Move');", {:id => 'actionMoveLink'} %></li>
+    <% end -%>
+    <% if @toolbar[:delete] -%>
+        <li class="actionDelete"><%= render :partial => 'toolbars/delete' %></li>
+    <% end -%>
+    <% if @toolbar[:tools] -%>
+        <li class="actionTools"><% link_to_function _('Tools'), "return Drawers.toggle('Tools');", {:id => 'actionToolsLink'} %></li>
+    <% end -%>
+    <% if @toolbar[:syntax] -%>
+    	<li class="actionSyntax"><%= link_to_function _('Syntax'), "return Drawers.toggle('Syntax');", {:id => 'actionToolsLink'} %></li>
+    <% end -%>
+    <% if @toolbar[:revisions] -%>
+      <li class="actionRevisions"><%= link_to_function _('Revisions'), "return Drawers.toggle('Revisions');", {:id => 'actionToolsLink'} %></li>
+    <% end -%>
+    <% if @toolbar[:show] -%>
+      <li class="actionShow"><%= link_to _('Show'), note_url(:id => @note, :revision => @revision.version) %>
+    <% end -%>
+    <% if @toolbar[:show_current] -%>
+      <li class="actionShowCurrent"><%= link_to _('Show Current'), note_url(@note) %>
+      <% end -%>
+    <% if @toolbar[:text] -%>
+      <li class="actionText"><%= link_to _('Plain Text'), formatted_note_url(@note, :txt) %></li>
+    <% end -%>
+</ul>

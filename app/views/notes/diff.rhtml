@@ -1,0 +1,16 @@
+<div class="infobox">
+    <table style="width:100%">
+        <tr>
+            <td style="text-align: left">
+                <h2 id="noteNameShowView"><%= @note.name %></h2>
+                <h3 id="noteVersionShowView"><%= _('Diffing') %> <%= @old_version.version %> (<%= format_local_words_or_date(@old_version.updated_at) %>) <%= _('with') %> <%= @new_version.version %> (<%= format_local_words_or_date(@new_version.updated_at) %>)</h3>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div id="noteContainer">
+    <%= @diff %>
+</div>
+
+<%= render :partial => "comments/list", :locals => {:item => @note }%>
